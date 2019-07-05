@@ -1,0 +1,106 @@
+Shell Solutions (Outputs)
+
+1) Write a Bash script which accepts name as input and displays a greeting: "Welcome (name)"
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q1.sh
+Enter your name
+Shriram
+Welcome Shriram
+
+2) Given two integers, x and y , find their sum and difference.
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q2.sh 3 2
+Sum is 5
+Difference is 1
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q2.sh 2 3
+Sum is 5
+Difference is -1
+ 
+3) Write a shell script to get current date, time, username and current working directory.
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q3.sh
+Current date and time is  Thu Jul 4 00:42:07 IST 2019
+Current username : root
+Current working directory  /home/shriram/Desktop/ShellAssessment
+
+4) Write a shell script which accepts name as input, creates a file with the accepted name (name_file.txt) & writes a sentence into the file
+
+For e.g., if I provide input as sample, the created filename will be sample_file.txt
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q4.sh
+Enter File name
+s
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ls
+q1.sh  q2.sh  q3.sh  q4.sh  s_file.txt  shell_solutions.odt  shri.txt
+
+5) Schedule a cron job to
+-> execute a script on all weekdays at 2 PM.su
+-> execute a script at every 3 hour interval between 8AM to 8PM
+-> execute a script on all the odd dates of all the even months at midnight.
+
+Command to create a new crontab 
+corntab -e
+
+Command to open crontab
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# export VISUAL=nano ; crontab -e
+crontab: installing new crontab
+
+Contents of crontab file
+  GNU nano 2.9.3                                            /tmp/crontab.xl2DxT/crontab                                             Modified  
+
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+0 2 * * * /bin/sh backup.sh
+
+41 12 04 07 03 /sbin/shutdown -r
+
+46 12 04 07 03 /home/shriram/Desktop/ShellAssessment q1.sh
+
+# Command to execute sample script only on weekdays at 2 pm
+00 14 * * 1-5  /home/shriram/Desktop/ShellAssessment sample.sh
+
+# Command to execute sample script every 3 hrs only between 8 am and 8 pm
+00 08-16/3 * * * /home/shriram/Desktop/ShellAssessment sample.sh
+
+# Command to execute sample script on all odd days of all even months at midnight
+00 00 1-31/2 2-12/2 * /home/shriram/Desktop/ShellAssessment sample.sh
+
+6) Write a shell script which takes an integer as input and returns the factorial of a number.
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q6.sh
+Enter a number 
+4
+Factorial is :  24
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q6.sh
+Enter a number 
+1
+Factorial is :  1
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q6.sh
+Enter a number 
+0
+Factorial is :  1
+
+7) Given three integers as input representing the three sides of a triangle, determine whether the triangle is Scalene, Isosceles, or Equilateral.
+
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q7.sh
+Enter the sides of the triangle
+10 10 10
+Equilateral triangle
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q7.sh
+Enter the sides of the triangle
+10 30 10
+Isoceles 
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q7.sh
+Enter the sides of the triangle
+30 30 10
+Isoceles 
+root@Quantiphi-928:/home/shriram/Desktop/ShellAssessment# ./q7.sh
+Enter the sides of the triangle
+10 20 30
+scalene
+
